@@ -1,18 +1,30 @@
 package com.itp.ITPShivamHibernate.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
-public class Employee //tablename = employee
+//@Table(name="itpEmployee")
+public class PermanentEmployee //tablename = itpemployee
 {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //autoincrement
 	private int eno;
+	
+	@Column(name="employeeName")
 	private String ename;
 	private double salary;
 	
-	public Employee() {}
-	public Employee(int eno, String ename, double salary) {
+	@Transient
+	private int temp;
+	
+	public PermanentEmployee() {}
+	public PermanentEmployee(int eno, String ename, double salary) {
 		this.eno = eno;
 		this.ename = ename;
 		this.salary = salary;

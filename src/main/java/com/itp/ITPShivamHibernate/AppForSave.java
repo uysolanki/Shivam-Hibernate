@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.itp.ITPShivamHibernate.entity.Employee;
+import com.itp.ITPShivamHibernate.entity.PermanentEmployee;
 
 /**
  * Hello world!
@@ -18,19 +18,21 @@ public class AppForSave
     	Configuration cfg=new Configuration();
     	cfg.configure("hibernate.cfg.xml");
     	SessionFactory factory=cfg.buildSessionFactory();
-    	
-    	System.out.println(factory);
-    	System.out.println(factory.isClosed());
-    	
+    
     	Session session1=factory.openSession();
     	Transaction tx=session1.beginTransaction();  //DML insert update delete
     	
-    	Employee e=new Employee(18,"Virat",800);
-    	session1.save(e);  
-    	tx.commit();
+    	PermanentEmployee e=new PermanentEmployee();
+    	e.setEname("Rohit");
+    	e.setSalary(900);
     	
-
+    	PermanentEmployee e2=new PermanentEmployee();
+    	e2.setEname("Rahul");
+    	e2.setSalary(1000);
     	
+    	session1.save(e); 
+    	session1.save(e2); 
+    	tx.commit();    	
 
     }
 }
