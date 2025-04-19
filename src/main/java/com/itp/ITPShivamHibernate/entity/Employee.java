@@ -1,35 +1,21 @@
 package com.itp.ITPShivamHibernate.entity;
 
-import javax.persistence.Cacheable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Transient;
-
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity
-@Cacheable
-@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
-//@Table(name="itpEmployee")
-public class PermanentEmployee //tablename = itpemployee
-{
+public class Employee {
+
 	@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY) //autoincrement
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int eno;
-	
-	@Column(name="employeeName")
 	private String ename;
 	private double salary;
 	
-	@Transient
-	private int temp;
-	
-	public PermanentEmployee() {}
-	public PermanentEmployee(int eno, String ename, double salary) {
+	public Employee() {}
+	public Employee(int eno, String ename, double salary) {
 		this.eno = eno;
 		this.ename = ename;
 		this.salary = salary;
@@ -52,12 +38,10 @@ public class PermanentEmployee //tablename = itpemployee
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	
 	@Override
 	public String toString() {
 		return "Employee [eno=" + eno + ", ename=" + ename + ", salary=" + salary + "]";
 	}
 	
 	
-
 }

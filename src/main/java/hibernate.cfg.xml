@@ -16,6 +16,13 @@
     <property name="hibernate.cache.use_second_level_cache">true</property>
     <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
 	
-	<mapping class="com.itp.ITPShivamHibernate.entity.PermanentEmployee"/>	
+	<mapping class="com.itp.ITPShivamHibernate.entity.PermanentEmployee"/>
+	<mapping class="com.itp.ITPShivamHibernate.entity.State"/>
+	<mapping class="com.itp.ITPShivamHibernate.entity.ChiefMinister"/>
+	<mapping class="com.itp.ITPShivamHibernate.entity.Dept"/>
+	<mapping class="com.itp.ITPShivamHibernate.entity.Employee"/>	
+	<mapping class="com.itp.ITPShivamHibernate.entity.Actor"/>
+	<mapping class="com.itp.ITPShivamHibernate.entity.Movie"/>
+	<mapping class="com.itp.ITPShivamHibernate.entity.TempEmp"/>	
 </session-factory>
 </hibernate-configuration>
